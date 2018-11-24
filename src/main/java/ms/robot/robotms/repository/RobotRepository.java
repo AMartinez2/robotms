@@ -7,5 +7,9 @@ import ms.robot.robotms.entity.Robot;
 
 public interface RobotRepository extends MongoRepository<Robot, String> {
     @Query (value = "{'name':?0}")   
-    Robot findByName(String id);
+    Robot findByName(String name);
+
+    // Name of id field in DB is '_id', so method must reflect that
+    @Query (value = "{'_id':'?0'}")
+    Robot findBy_id(String id);
 }

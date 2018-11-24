@@ -3,6 +3,8 @@ package ms.robot.robotms;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +27,12 @@ public class RobotController {
     @GetMapping("/name/{name}")
     public Robot getRobotByName (@PathVariable String name) {
         Robot result = robotRepository.findByName(name);
+        return result;
+    }
+
+    @GetMapping("/id/{id}")
+    public Robot getRobotById (@PathVariable String id) {
+        Robot result = robotRepository.findBy_id(id);
         return result;
     }
 }

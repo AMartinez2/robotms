@@ -7,18 +7,28 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "robots")
 
 public class Robot {
+    String _id;
     String name;
     int height;
     int price;
     int stock;
     List<String> powers;
 
-    public Robot(String name, int height, int price, List<String> powers, int stock) {
+    public Robot(String _id, String name, int height, int price, List<String> powers, int stock) {
+        this._id = _id;
         this.name = name;
         this.height = height;
         this.price = price;
         this.powers = powers;
         this.stock = stock;
+    }
+
+    public String getId() {
+        return this._id;
+    }
+
+    public void setId(String _id) {
+        this._id = _id;
     }
 
     public String getName() {
