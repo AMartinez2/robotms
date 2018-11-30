@@ -11,25 +11,24 @@ import org.springframework.web.bind.annotation.RestController;
 import ms.robot.robotms.entity.Robot;
 import ms.robot.robotms.repository.RobotRepository;
 
+
+@CrossOrigin({"http://localhost:4200", "http://google.com"})
 @RestController
 public class RobotController {
     @Autowired
     RobotRepository robotRepository;
 
-    @CrossOrigin("http://localhost:4200")
     @GetMapping ("/allRobots")
     public List<Robot> getAll () {
         return robotRepository.findAll();
     }
 
-    @CrossOrigin("http://localhost:4200")
     @GetMapping("/name/{name}")
     public Robot getRobotByName (@PathVariable String name) {
         Robot result = robotRepository.findByName(name);
         return result;
     }
 
-    @CrossOrigin("http://localhost:4200")
     @GetMapping("/id/{id}")
     public Robot getRobotById (@PathVariable String id) {
         Robot result = robotRepository.findBy_id(id);
