@@ -9,15 +9,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Robot {
     String _id;
     String name;
+    String photo;
     int height;
     int price;
     int stock;
     List<String> powers;
 
-    public Robot(String _id, String name, int height, int price, List<String> powers, int stock) {
+    public Robot(String _id, String name, String photo, int height, int price, List<String> powers, int stock) {
         this._id = _id;
         this.name = name;
         this.height = height;
+        this.photo = photo;
         this.price = price;
         this.powers = powers;
         this.stock = stock;
@@ -37,6 +39,14 @@ public class Robot {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPhoto() {
+        return this.photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public int getHeight() {
