@@ -12,7 +12,7 @@ import ms.robot.robotms.entity.Robot;
 import ms.robot.robotms.repository.RobotRepository;
 
 
-@CrossOrigin({"http://localhost:4200", "https://eng-dev.herokuapp.com", "https://project13-test.herokuapp.com/"})
+@CrossOrigin({"http://localhost:4200", "https://eng-dev.herokuapp.com", "https://project13-test.herokuapp.com"})
 @RestController
 public class RobotController {
     @Autowired
